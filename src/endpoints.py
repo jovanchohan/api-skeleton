@@ -147,10 +147,6 @@ def get_appointments_by_time():
     except ValueError:
         return {"message": "Invalid date or time format"}, HTTPStatus.BAD_REQUEST
 
-    print("start", start_datetime)
-    print("end", end_datetime)
-    print("doctor", doctor_id)
-
     doctor = Doctor.query.get(doctor_id)
     if not doctor:
         return {"message": "Doctor not found"}, HTTPStatus.NOT_FOUND
